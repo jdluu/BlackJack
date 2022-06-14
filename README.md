@@ -1,3 +1,5 @@
-# BlackJack
+# A Collection of Different Card Games Implemented
 
-A Basic Implementation of the popular card game BlackJack. Currently uses command line, working in gui.
+[] BlackJack
+- Implemented in command line
+- Hit/Stand
