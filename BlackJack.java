@@ -1,5 +1,5 @@
 
-public class Game extends Hand {
+public class BlackJack extends Hand {
 
     public static void sleep(int time) {
         try {
