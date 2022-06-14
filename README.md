@@ -1,5 +1,8 @@
-# A Collection of Different Card Games Implemented
+# BlackJack
 
-[] BlackJack
-- Command Line
-- Hit/Stand
+Features:
+
+[x] - Hit / Stay
+[x] - Command Line GUI
+[] - Windowed GUI
+[] - Double Down / Split
