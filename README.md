@@ -1,11 +1,9 @@
 # BlackJack
 
-Features:
+## Features:
 
-[x] - Hit / Stay
+- [x] Hit / Stay
+- [x] Command Line GUI
+- [ ] Windowed GUI
+- [ ] Double Down / Split
 
-[x] - Command Line GUI
-
-[] - Windowed GUI
-
-[] - Double Down / Split
