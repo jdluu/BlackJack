@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class BJHand  {
+public class BJHand extends Hand {
     public ArrayList<BJCard> cards;
     public int total;
     public int aces;
@@ -11,6 +11,14 @@ public class BJHand  {
         this.aces = 0;
     }
 
+    public int getHandValue() {
+        int total = 0;
+        for (BJCard card : this.cards) {
+            total += card.getValue();
+        }
+        return total;
+    }
+
     public void addCard(BJCard card) {
         this.cards.add(card);
         this.total += card.getValue();
@@ -18,14 +26,7 @@ public class BJHand  {
             this.aces += 1;
         }
     }
-
-    public void adjustForAce() {
-        if (this.total > 21 && this.aces > 0) {
-            this.total -= 10;
-            this.aces -= 1;
-        }
-    }
-
+    
     public void update() {
         this.total = 0;
         this.aces = 0;

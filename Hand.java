@@ -15,7 +15,6 @@ abstract class Hand {
     }
 
     public abstract int getHandValue();
-    public abstract void addCard(Card card);
     public abstract void printCards();
 
     public void adjustForAce() {

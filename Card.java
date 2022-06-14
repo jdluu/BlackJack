@@ -1,4 +1,3 @@
-
 interface Card {
     public String getSuit();
     public String getRank();
