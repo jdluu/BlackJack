@@ -1,5 +1,5 @@
 
-public class BlackJack extends Hand {
+public class BJGame extends BJHand {
 
     public static void sleep(int time) {
         try {
@@ -12,11 +12,11 @@ public class BlackJack extends Hand {
     public static void main(String[] args) {
 
         // Create two hands, one for the player and one for the dealer
-        Hand player = new Hand();
-        Hand dealer = new Hand();
+        BJHand player = new BJHand();
+        BJHand dealer = new BJHand();
 
         // Generate the deck and shuffle it
-        Deck deck = new Deck();
+        BJDeck deck = new BJDeck();
         deck.generateDeck();
         
         System.out.println("Shuffling the deck...\n");
