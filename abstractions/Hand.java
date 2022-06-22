@@ -1,6 +1,7 @@
+package abstractions;
 import java.util.ArrayList;
 
-abstract class Hand {
+public abstract class Hand {
 
     // Fields
     public ArrayList<Card> cards;

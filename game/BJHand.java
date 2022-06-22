@@ -1,4 +1,8 @@
+package game;
+
 import java.util.ArrayList;
+
+import abstractions.Hand;
 
 public class BJHand extends Hand {
     public ArrayList<BJCard> cards;

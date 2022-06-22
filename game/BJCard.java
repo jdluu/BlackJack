@@ -1,3 +1,7 @@
+package game;
+
+import abstractions.Card;
+
 public class BJCard implements Card {
     private String suit;
     private String rank;

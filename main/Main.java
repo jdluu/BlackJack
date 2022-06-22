@@ -1,5 +1,10 @@
+package main;
 
-public class BJGame extends BJHand {
+import game.BJDeck;
+import game.BJHand;
+
+
+public class Main extends BJHand {
 
     public static void sleep(int time) {
         try {

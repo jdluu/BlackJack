@@ -1,5 +1,7 @@
+package game;
+
 import java.util.ArrayList;
-class BJDeck extends BJCard {
+public class BJDeck extends BJCard {
     private ArrayList<BJCard> cards;
     private String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
     private String[] ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
