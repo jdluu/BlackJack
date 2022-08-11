@@ -14,6 +14,10 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
+@app.route('/game/')
+def game():
+    return render_template('game.html')
+
 @app.route('/instructions/')
 def instructions():
     return render_template('instructions.html')
