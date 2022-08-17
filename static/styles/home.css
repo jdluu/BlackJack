@@ -1,111 +1,43 @@
 * {
   box-sizing: border-box;
 }
-body {
-  font-size: 14px;
-}
-.v2_2 {
-  width: 100%;
-  height: 718px;
-  background: rgba(255,255,255,1);
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
-}
-.v4_14 {
-  width: 100%;
-  height: 718px;
-  background: linear-gradient(rgba(76,26,196,1), rgba(56,170,228,0));
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  border: 1px solid rgba(0,0,0,1);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
-}
-.v4_28 {
-  width: 465px;
-  height: 594px;
-  background: url("../images/v4_28.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 77px;
-  left: 536px;
-  overflow: hidden;
-}
-.v4_23 {
-  width: 420px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 524px;
-  left: 21px;
-  font-family: Inter;
-  font-weight: Bold;
-  font-size: 40px;
-  opacity: 1;
+
+/* Center the title */
+.title {
   text-align: center;
 }
-.v4_25 {
-  width: 347px;
-  color: rgba(0,0,0,1);
+
+.body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2c3e50;
+  background-color: #ecf0f1;
+  margin: 0;
+  padding: 0;
+  overflow: 0;
+}
+footer{
   position: absolute;
-  top: 485px;
-  left: 58px;
-  font-family: Inter;
-  font-weight: Bold;
-  font-size: 40px;
-  opacity: 1;
-  text-align: center;
+  bottom: 0;
+  width: 20%;
+  height: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.v4_21 {
-  width: 465px;
-  height: 465px;
-  background: rgba(255,107,107,1);
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  border-radius: 50%;
-}
-.v4_13 {
-  width: 329px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 321px;
-  left: 67px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 48px;
-  opacity: 1;
-  text-align: center;
-}
-.v4_2 {
-  width: 329px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 260px;
-  left: 67px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 48px;
-  opacity: 1;
-  text-align: center;
-}
-.v4_12 {
-  width: 417px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 140px;
-  left: 23px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 96px;
-  opacity: 1;
-  text-align: center;
-}
+  footer-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+  }
+
+  footer-copyright{
+    font-size: 12px;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+
+  }
