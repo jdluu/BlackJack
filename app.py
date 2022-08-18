@@ -18,9 +18,9 @@ def home():
 def game():
     return render_template('game.html')
 
-@app.route('/instructions/')
-def instructions():
-    return render_template('instructions.html')
+@app.route('/rules/')
+def rules():
+    return render_template('rules.html')
 
 @app.route('/stats/')
 def stats():
