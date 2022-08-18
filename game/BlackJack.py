@@ -76,11 +76,6 @@ class BlackJack(Hand):
             print("\nYou win!\n")
         else:
             print("\nIt's a tie!\n")
-        self.delay(2)
-        print("\nThanks for playing!\n")
-        self.delay(2)
-        print("\nGoodbye!\n")
-        self.delay(2)
         exit()
 
 
