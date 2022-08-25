@@ -1,6 +1,6 @@
 
 from string import capwords
-from Card import Card
+from card import Card
 
 class Hand:
     cards = []
@@ -37,6 +37,12 @@ class Hand:
         while self.aces > 0 and self.total > 21:
             self.total -= 10
             self.aces -= 1
+    
+    def clearHand(self):
+        self.cards = []
+        self.total = 0
+        self.aces = 0
+    
 
     # Print the hand
     def printHand(self):

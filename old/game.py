@@ -1,7 +1,7 @@
 
-from Deck import Deck
-from Hand import Hand
-from Card import Card
+from deck import Deck
+from hand import Hand
+from card import Card
 
 import time
 
