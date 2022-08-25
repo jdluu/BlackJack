@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.head .title {
-  text-align: center;
-}
-
 body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1;
