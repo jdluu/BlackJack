@@ -32,26 +32,26 @@ def getBlackJack():
 	BlackJack.startHand()
 
 	return render_template("blackjack.html",
-		hand_results = BlackJack.hand_results(),
-		dealer_cards = BlackJack.dealer_cards().replace("10", "0").split(", "),
-		player_cards = BlackJack.player_cards().replace("10", "0").split(", ")
+		handResults = BlackJack.handResults(),
+		dealerCards = BlackJack.dealerCards().replace("10", "0").split(", "),
+		playerCards = BlackJack.playerCards().replace("10", "0").split(", ")
 	)
 
 # Update BlackJack page
 @app.post("/blackjack/")
 def post_blackjack():
-	submit_button = request.form.get("submitButton")
+	submitButton = request.form.get("submitButton")
 
-	if BlackJack.is_hand_active():
-		if submit_button.upper() == "H":
-			BlackJack.hit_player()
+	if BlackJack.isPlayerTurn():
+		if submitButton.upper() == "H":
+			BlackJack.playerHit()
 		else:
-			BlackJack.play_dealer()
+			BlackJack.dealerPlay()
 
 	return render_template("blackjack.html",
-		hand_results = BlackJack.hand_results(),
-		dealer_cards = BlackJack.dealer_cards().replace("10", "0").split(", "),
-		player_cards = BlackJack.player_cards().replace("10", "0").split(", ")
+		handResults = BlackJack.handResults(),
+		dealerCards = BlackJack.dealerCards().replace("10", "0").split(", "),
+		playerCards = BlackJack.playerCards().replace("10", "0").split(", ")
 	)
 
 

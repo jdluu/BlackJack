@@ -1,82 +1,82 @@
 import random
 
-number_decks = 1
-reshuffle_count = 12
+numberDecks = 1
+reshuffleCount = 12
 
 types = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K"]
 suits = ["C", "D", "H", "S"]
 
 deck = []
-player_hand = []
-dealer_hand = []
+playerHand = []
+dealerHand = []
 
-in_hand = False
-player_total = 0
-dealer_total = 0
+playerTurn = False
+playerTotal = 0
+dealerTotal = 0
 
 def startHand():
-	global player_total, dealer_total, in_hand
-	if len(deck) < reshuffle_count:
+	global playerTotal, dealerTotal, playerTurn
+	if len(deck) < reshuffleCount:
 		print("The deck is being reshuffled now.")
-		shuffle_deck()
+		shuffleDeck()
 
-	player_hand.clear()
-	dealer_hand.clear()
-	player_total = 0
-	dealer_total = 0
+	playerHand.clear()
+	dealerHand.clear()
+	playerTotal = 0
+	dealerTotal = 0
 
-	player_total = add_card(player_hand, player_total);
-	dealer_total = add_card(dealer_hand, dealer_total);
-	player_total = add_card(player_hand, player_total);
-	dealer_total = add_card(dealer_hand, dealer_total);
+	playerTotal = addCard(playerHand, playerTotal);
+	dealerTotal = addCard(dealerHand, dealerTotal);
+	playerTotal = addCard(playerHand, playerTotal);
+	dealerTotal = addCard(dealerHand, dealerTotal);
 
-	in_hand = (player_total < 21)
-	if player_total == 21:
-		play_dealer()
+	playerTurn = (playerTotal < 21)
+	if playerTotal == 21:
+		dealerPlay()
 
-def is_hand_active():
-	return in_hand
+def isPlayerTurn():
+	return playerTurn
 
-def hit_player():
-	global player_total, in_hand
-	if in_hand:
-		player_total = add_card(player_hand, player_total)
-		in_hand = (player_total < 21)
+def playerHit():
+	global playerTotal, playerTurn
+	if playerTurn:
+		playerTotal = addCard(playerHand, playerTotal)
+		playerTurn = (playerTotal < 21)
 
-def play_dealer():
-	global dealer_total, in_hand
-	in_hand = False;
-	if player_total <= 21:
-		while dealer_total <= 16:
-			dealer_total = add_card(dealer_hand, dealer_total)
+def dealerPlay():
+	global dealerTotal, playerTurn
+	playerTurn = False;
+	if playerTotal <= 21:
+		while dealerTotal <= 16:
+			dealerTotal = addCard(dealerHand, dealerTotal)
 
-def player_cards():
-	return ", ".join(player_hand).upper().replace("T", "10")
+def playerCards():
+	return ", ".join(playerHand).upper().replace("T", "10")
 
-def dealer_cards():
-	cards = ", ".join(dealer_hand)
-	if in_hand:
+def dealerCards():
+	cards = ", ".join(dealerHand)
+	if playerTurn:
 		cards = "??" + cards[2:]
 	return cards.upper().replace("T", "10")
 
-def hand_results():
-	if in_hand:
+def handResults():
+	if playerTurn:
 		return "Please Hit or Stand"
 	else:
-		play_dealer()
+		dealerPlay()
 	
-	if player_total > 21:
+	if playerTotal > 21:
 		return "Player Busted - You Lost!"
-	elif dealer_total > 21:
+	elif dealerTotal > 21:
 		return "Dealer Busted - You Win!"
-	elif player_total == dealer_total:
-		return "Its a Tie - No One Won"
-	elif player_total > dealer_total:
+	elif playerTotal == dealerTotal:
+		return "Its a Tie - No One Won!"
+	elif playerTotal > dealerTotal:
 		return "You Won - Dealer Lost!"
 	else:
 		return "You Lost - Dealer Won!"
 
-def add_card(hand, current):
+def addCard(hand, current):
 	if len(deck) == 0:
 		print("OOPS - No more cards in the deck!")
 		return current
@@ -106,12 +106,12 @@ def add_card(hand, current):
 				break
 	return total
 
-def shuffle_deck():
+def shuffleDeck():
 	deck.clear()
-	for count in range(number_decks):
+	for count in range(numberDecks):
 		for type in types:
 			for suit in suits:
 				deck.append(type + suit)
 	random.shuffle(deck)
 
-shuffle_deck()
+shuffleDeck()
