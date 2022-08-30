@@ -26,27 +26,33 @@ def getRules():
 def getStats():
     return render_template('stats.html')
 
-# 
+# Gets Initial BlackJack game
 @app.route('/blackjack/')
-def getBlackjack():
-    BlackJack.startHand()
-    return render_template('blackjack.html', 
-        handResults = BlackJack.handResults(), 
-        playerCards = BlackJack.playerCards(), 
-        dealerCards = BlackJack.dealerCards())
+def getBlackJack():
+	BlackJack.startHand()
 
+	return render_template("blackjack.html",
+		hand_results = BlackJack.hand_results(),
+		dealer_cards = BlackJack.dealer_cards().replace("10", "0").split(", "),
+		player_cards = BlackJack.player_cards().replace("10", "0").split(", ")
+	)
+
+# Update BlackJack page
 @app.post("/blackjack/")
-def postBlackJack():
-    submitButton = request.form.get("submitButton")
+def post_blackjack():
+	submit_button = request.form.get("submitButton")
 
-    if BlackJack.isPlayerTurn():
-        if submitButton.upper() == "H":
-            BlackJack.playerHit()
-        else:
-            BlackJack.dealerPlay()
-    
-    return render_template('blackjack.html', handResults = BlackJack.handResults(), playerCards = BlackJack.playerCards(), dealerCards = BlackJack.dealerCards())
+	if BlackJack.is_hand_active():
+		if submit_button.upper() == "H":
+			BlackJack.hit_player()
+		else:
+			BlackJack.play_dealer()
 
+	return render_template("blackjack.html",
+		hand_results = BlackJack.hand_results(),
+		dealer_cards = BlackJack.dealer_cards().replace("10", "0").split(", "),
+		player_cards = BlackJack.player_cards().replace("10", "0").split(", ")
+	)
 
 
 # main driver function
