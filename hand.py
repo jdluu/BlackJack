@@ -11,7 +11,7 @@ class Hand:
     def getTotal(self):
         total = 0
         for i in range(len(self.cards)):
-            temp += self.cards[i].getVal()
+            total += self.cards[i].getVal()
         return total
     
     # Add a card to the hand
@@ -43,7 +43,6 @@ class Hand:
         self.total = 0
         self.aces = 0
     
-
     # Print the hand
     def printHand(self):
         for i in range(len(self.cards)):
