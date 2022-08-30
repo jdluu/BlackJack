@@ -11,26 +11,29 @@ app = Flask(__name__, template_folder='templates', static_folder='static')
 # which tells the application which URL should call
 # the associated function.
 
+# The home page of my website
 @app.route('/')
 def get_homepage():
     return render_template("home.html")
 
+# The rules of BlackJack 
 @app.route('/rules/')
 def getRules():
     return render_template('rules.html')
 
+# Stats of BlackJack players
 @app.route('/stats/')
 def getStats():
     return render_template('stats.html')
 
-@app.route('/blackjack/')
-def getBlackJack():
-    return render_template('blackjack.html')
-"""
+# 
 @app.route('/blackjack/')
 def getBlackjack():
     BlackJack.startHand()
-    return render_template('blackjack.html', handResults = BlackJack.handResults(), playerCards = BlackJack.playerCards(), dealerCards = BlackJack.dealerCards())
+    return render_template('blackjack.html', 
+        handResults = BlackJack.handResults(), 
+        playerCards = BlackJack.playerCards(), 
+        dealerCards = BlackJack.dealerCards())
 
 @app.post("/blackjack/")
 def postBlackJack():
@@ -43,8 +46,6 @@ def postBlackJack():
             BlackJack.dealerPlay()
     
     return render_template('blackjack.html', handResults = BlackJack.handResults(), playerCards = BlackJack.playerCards(), dealerCards = BlackJack.dealerCards())
-
-"""
 
 
 
