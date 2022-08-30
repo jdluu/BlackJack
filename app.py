@@ -2,11 +2,10 @@
 # An object of Flask class is our WSGI application.
 from flask import Flask, request, render_template
 
-import BlackJack
- 
+import BlackJack 
 # Flask constructor takes the name of
 # current module (__name__) as argument.
-app = Flask(__name__, static_url_path="")
+app = Flask(__name__, template_folder='templates', static_folder='static')
  
 # The route() function of the Flask class is a decorator,
 # which tells the application which URL should call
@@ -16,6 +15,18 @@ app = Flask(__name__, static_url_path="")
 def get_homepage():
     return render_template("home.html")
 
+@app.route('/rules/')
+def getRules():
+    return render_template('rules.html')
+
+@app.route('/stats/')
+def getStats():
+    return render_template('stats.html')
+
+@app.route('/blackjack/')
+def getBlackJack():
+    return render_template('blackjack.html')
+"""
 @app.route('/blackjack/')
 def getBlackjack():
     BlackJack.startHand()
@@ -33,13 +44,9 @@ def postBlackJack():
     
     return render_template('blackjack.html', handResults = BlackJack.handResults(), playerCards = BlackJack.playerCards(), dealerCards = BlackJack.dealerCards())
 
-@app.route('/rules/')
-def getRules():
-    return render_template('rules.html')
+"""
 
-@app.route('/stats/')
-def getStats():
-    return render_template('stats.html')
+
 
 # main driver function
 if __name__ == "__main__":
