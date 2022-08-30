@@ -20,10 +20,10 @@ class Card:
     
     # Getter method that returns the value of the card
     def getVal(self):
-        if self.rank == "A":
+        if self.rank == "Ace":
             return 11;
         elif self.rank == "J" or self.rank == "Q" or self.rank == "K":
             return 10;
         else:
-            return int(self.rank);
+            return int(self.rank)
     
