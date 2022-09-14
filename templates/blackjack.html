@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    {% for card in dealer_cards %}
+                    {% for card in dealerCards %}
                     <div class="col-1">
                         {% if card == "??" %}
                         <img src="..\static\images\playingCardBack.jpg" alt="{{card}}" />
@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    {% for card in player_cards %}
+                    {% for card in playerCards %}
                     <div class="col-1">
                         <img src="https://deckofcardsapi.com/static/img/{{card}}.png" alt="{{card}}" />
                     </div>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="row form-group">
                     <div class="col-12 text-right">
-                        {{hand_results}}
+                        {{handResults}}
                         <button type="submit" name="submitButton" value="H" class="btn btn-primary">Hit</button>
                         <button type="submit" name="submitButton" value="S" class="btn btn-success">Stand</button>
                         <a href="/blackjack" class="btn btn-warning">Restart</a>
